@@ -87,6 +87,22 @@ p{margin:0 0 16px}
 h4{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:30px 0 6px;font-weight:600}
 
 .contact a{font-weight:500}
+
+.links{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0}
+.links a{font-size:13px;font-weight:500;padding:6px 12px;border:1px solid var(--line);border-radius:999px;color:var(--ink)}
+.links a:hover{border-color:var(--accent);text-decoration:none}
+figure{margin:18px 0 6px}
+figure img{width:100%;height:auto;border-radius:10px;background:#fff;display:block}
+figcaption{font-size:13px;color:var(--muted);margin-top:8px}
+.figs{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:700px){.figs{grid-template-columns:1fr}}
+.demo{margin-top:18px;border:1px solid var(--line);border-radius:12px;padding:18px;background:var(--bg-2)}
+.demo h4{margin:0 0 6px}
+.demo label{font-size:14px;color:var(--muted);display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.demo input[type=range]{flex:1;min-width:180px;accent-color:var(--accent)}
+.demo svg{width:100%;height:auto;display:block;margin-top:10px}
+.demo .out{font-size:14px;margin:10px 0 0}
+.demo .out b{color:var(--accent)}
 footer{padding:36px 0 50px;color:var(--muted);font-size:14px}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 .quote{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:20px;color:var(--muted)}
@@ -144,13 +160,25 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
         <p class="tag">Quantum measurement · First author</p>
         <h3>Asking an atom where it is going, without spoiling the interference</h3>
         <p>Atoms crossing a double slit build an interference pattern, and a probe strong enough to see where they are usually destroys it. My paper proposes a gentle probe: a curtain of far-detuned light whose faint deflection carries information about each atom. I derived the formula that turns that deflection into the atoms' conditional momentum field, extending the 2011 photon experiment of Kocsis and Steinberg to matter waves, and built the forward model showing that a first test is within reach of present cold-atom sources.</p>
-        <p class="ref">Fabianiak and Deligiannis · revised manuscript under review at <i>New Journal of Physics</i> · <a href="https://doi.org/10.5281/zenodo.22554166">preprint</a></p>
+        <div class="figs">
+          <figure><img src="images/curtain_setup.jpg" alt="Schematic of the proposed experiment: rubidium atoms fall through a double slit and cross dual-colour light curtains at 20 heights before reaching a detection screen" loading="lazy"><figcaption>The proposed experiment: cold rubidium atoms fall through a double slit and cross a light curtain at twenty heights before landing on the screen.</figcaption></figure>
+          <figure><img src="images/curtain_regime.jpg" alt="Map of photon number against per-photon coupling showing the viable weak-measurement regime between insufficient statistics and strong measurement, with the chosen operating point" loading="lazy"><figcaption>Where the measurement is gentle enough to keep the interference yet strong enough to read: the green band, with the operating point starred. Regenerated from my published code.</figcaption></figure>
+        </div>
+        <p class="ref">Fabianiak and Deligiannis · revised manuscript under review at <i>New Journal of Physics</i></p>
+        <div class="links"><a href="https://doi.org/10.5281/zenodo.22554166">Read the preprint</a><a href="https://github.com/jessicafabianiak/weak-measurement-matter-waves">Code on GitHub</a></div>
       </article>
 
       <article class="card">
         <p class="tag">Statistics · First author</p>
         <h3>When larger samples mislead</h3>
         <p>A pooled estimate can grow ever more precise while describing no individual in the sample. I wrote the software and analysis for three diagnostics that reveal it from the data alone: a bias that stops shrinking as the sample grows, prediction errors that split by hidden subgroup, and forecast errors that widen with the horizon. In reanalyses of mood-monitoring and cognitive-training data, the pooled estimates matched only 5% and 0.1% of the individual ones.</p>
+        <div class="demo" id="pooling-demo">
+          <h4>Try it: add more people, and watch the answer grow confident and wrong</h4>
+          <label>Participants: <input type="range" id="nslider" min="10" max="2000" step="10" value="40"><span id="nval">40</span></label>
+          <svg id="pchart" viewBox="0 0 640 220" role="img" aria-label="Histogram of individual estimates with the pooled estimate and its confidence band"></svg>
+          <p class="out" id="pout"></p>
+          <p class="out" style="color:var(--muted)">Each simulated person follows one of two dynamics: some settle back toward balance (persistence 0.3), others drift (persistence 1.0). Bars show each person's own estimate; the gold line and band are the pooled average and its 95% interval.</p>
+        </div>
         <p class="ref">Fabianiak and Mangalam · manuscript</p>
       </article>
 
@@ -159,6 +187,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
         <h3>The structure hidden in the body's noise</h3>
         <p>Standing balance looks steady, yet its small corrections carry a memory across time scales. Recording younger and older adults on a stable surface and on a wobble board, our team found that the network coordinating those corrections grows paradoxically rigid with age, and that wobble-board dynamics can serve as a scalable test of long-latency reflexes. I collected and curated the motion-capture data behind both studies.</p>
         <p class="ref"><i>npj Aging</i> (2026) · <i>GeroScience</i> (2026)</p>
+        <div class="links"><a href="https://doi.org/10.1038/s41514-026-00490-7">npj Aging paper</a><a href="https://doi.org/10.1007/s11357-026-02217-8">GeroScience paper</a></div>
       </article>
 
       <article class="card">
@@ -166,6 +195,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
         <h3>Why medicine's successes left it unprepared</h3>
         <p>Medicine triumphed over diseases with one discrete cause, and in doing so built institutions poorly suited to illness distributed across scales, as in aging. I co-wrote this hypothesis-and-theory article on what a multiscale view would change.</p>
         <p class="ref"><i>Frontiers in Public Health</i> (2026)</p>
+        <div class="links"><a href="https://doi.org/10.3389/fpubh.2026.1932205">Read the article</a></div>
       </article>
 
     </div>
@@ -240,5 +270,47 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
   </div>
 </footer>
 
+
+<script>
+(function(){
+  function rng(seed){return function(){seed|=0;seed=seed+0x6D2B79F5|0;var t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+  function gauss(r){var u=1-r(),v=r();return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v);}
+  var T=60, MAX=2000, people=[], r=rng(7);
+  for(var i=0;i<MAX;i++){
+    var phi = (r()<0.5)?0.3:1.0, x=0, sxy=0, sxx=0;
+    for(var t=0;t<T;t++){var nx=phi*x+gauss(r); sxy+=x*nx; sxx+=x*x; x=nx;}
+    people.push({phi:phi,est:sxy/sxx,sxy:sxy,sxx:sxx});
+  }
+  var svg=document.getElementById('pchart'), sl=document.getElementById('nslider'), nv=document.getElementById('nval'), out=document.getElementById('pout');
+  var W=640,H=220,L=30,R=620,B=190,top=14, lo=-0.1, hi=1.2, bins=52;
+  function X(v){return L+(v-lo)/(hi-lo)*(R-L);}
+  function css(n){return getComputedStyle(document.documentElement).getPropertyValue(n).trim();}
+  function draw(){
+    var n=+sl.value; nv.textContent=n;
+    var sub=people.slice(0,n), counts=new Array(bins).fill(0), sxy=0,sxx=0;
+    sub.forEach(function(p){var b=Math.floor((p.est-lo)/(hi-lo)*bins); if(b>=0&&b<bins)counts[b]++; sxy+=p.sxy; sxx+=p.sxx;});
+    var mx=Math.max.apply(null,counts)||1;
+    var pooled=sub.reduce(function(a,p){return a+p.est;},0)/n;
+    var v=sub.reduce(function(a,p){return a+(p.est-pooled)*(p.est-pooled);},0)/(n-1);
+    var half=1.96*Math.sqrt(v/n);
+    var match=sub.filter(function(p){return Math.abs(p.phi-pooled)<0.1;}).length;
+    var acc=css('--accent'), ink=css('--ink'), mut=css('--muted'), line=css('--line'), blue=css('--accent-2');
+    var h='';
+    h+='<rect x="'+X(pooled-half)+'" y="'+top+'" width="'+Math.max(2,X(pooled+half)-X(pooled-half))+'" height="'+(B-top)+'" fill="'+acc+'" opacity="0.28"/>';
+    var bw=(R-L)/bins;
+    counts.forEach(function(c,i){var hh=c/mx*(B-top-10); h+='<rect x="'+(L+i*bw+1)+'" y="'+(B-hh)+'" width="'+(bw-2)+'" height="'+hh+'" fill="'+blue+'" opacity="0.8"/>';});
+    h+='<line x1="'+X(pooled)+'" x2="'+X(pooled)+'" y1="'+top+'" y2="'+B+'" stroke="'+acc+'" stroke-width="2.5"/>';
+    h+='<line x1="'+L+'" x2="'+R+'" y1="'+B+'" y2="'+B+'" stroke="'+line+'"/>';
+    [0,0.3,0.5,1.0].forEach(function(v){h+='<text x="'+X(v)+'" y="'+(B+18)+'" fill="'+mut+'" font-size="12" text-anchor="middle">'+v.toFixed(1)+'</text>';});
+    h+='<text x="'+X(0.3)+'" y="'+(top+12)+'" fill="'+mut+'" font-size="12" text-anchor="middle">settlers</text>';
+    h+='<text x="'+X(1.0)+'" y="'+(top+12)+'" fill="'+mut+'" font-size="12" text-anchor="middle">drifters</text>';
+    h+='<text x="'+(X(pooled)+6)+'" y="'+(top+30)+'" fill="'+acc+'" font-size="12">pooled</text>';
+    svg.innerHTML=h;
+    out.innerHTML='Pooled estimate <b>'+pooled.toFixed(2)+' ± '+half.toFixed(3)+'</b> &nbsp;·&nbsp; people it actually describes (within 0.1): <b>'+match+' of '+n+'</b>';
+  }
+  sl.addEventListener('input',draw); draw();
+  if(window.matchMedia)window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change',draw);
+})();
+</script>
 </body>
 </html>
