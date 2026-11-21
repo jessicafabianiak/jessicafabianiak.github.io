@@ -176,9 +176,12 @@ figcaption{font-size:13px;color:var(--muted);margin-top:8px}
   <div class="wrap prose">
     <p class="ket">⟨ψ|about⟩</p>
     <h2>About</h2>
-    <p class="sub">A chemist who came to physics sideways, and a veteran who learned to lead before learning to measure.</p>
-    <p>Every problem I have worked on has asked the same question: how do you learn about a system while belonging to it? I first met that question in a chemistry laboratory, then in a movement laboratory where the body's own noise turned out to carry structure across scales, and now in quantum mechanics, which I have read about since I was young and where every measurement disturbs what it records.</p>
-    <p>I am a first-year master's student in Nuclear Engineering at Université Paris-Saclay, on the chemistry and chemical engineering track taught with INSTN at CEA Saclay. I hold a Bachelor of Science in Chemistry with a minor in Biomechanics from the University of Nebraska Omaha. Before science I served in the United States Air Force, and I plan to pursue a doctorate in nuclear and particle physics.</p>
+    <p class="sub">Five chapters so far, each one asking a little more of the instruments.</p>
+    <p><b>The uniform.</b> My first job was as an Aerospace Medical Technician in the United States Air Force. A reading taken carelessly could hurt someone, and a team that did not trust one another could not function, so I learned both lessons early and together.</p>
+    <p><b>The bench.</b> Chemistry at the University of Nebraska Omaha taught me what it takes to defend a number: calibrate the instrument, validate the method, write every step down so a stranger could repeat it. An internship setting up a pharmaceutical chromatography lab turned that discipline into a habit.</p>
+    <p><b>The wobble board.</b> A movement laboratory then upended what I thought data were. Watching people keep their balance, I saw that the tiny tremors we usually average away carry a rhythm of their own, and that the average itself can quietly lie.</p>
+    <p><b>The double slit.</b> Quantum mechanics has been with me since the books I read as a child, and it was the natural place to take that suspicion further. There, observing a thing changes it, so deciding what you can honestly claim becomes the entire problem.</p>
+    <p><b>The next instrument.</b> That path brought me to Paris-Saclay to study nuclear engineering at INSTN, and it points toward a doctorate in nuclear and particle physics, where detectors are the senses we build for a world too small to see.</p>
   </div>
 </section>
 
@@ -186,13 +189,13 @@ figcaption{font-size:13px;color:var(--muted);margin-top:8px}
   <div class="wrap">
     <p class="ket">Ĥ|research⟩</p>
     <h2>Research</h2>
-    <p class="sub">Four questions, one thread: knowing when a measurement, a model or an average can be trusted.</p>
+    <p class="sub">Each project started as a doubt about something people usually take on trust.</p>
     <div class="cards">
 
       <article class="card">
         <p class="tag">Quantum measurement · First author</p>
-        <h3>Asking an atom where it is going, without spoiling the interference</h3>
-        <p>Atoms crossing a double slit build an interference pattern, and a probe strong enough to see where they are usually destroys it. My paper proposes a gentle probe: a curtain of far-detuned light whose faint deflection carries information about each atom. I derived the formula that turns that deflection into the atoms' conditional momentum field, extending the 2011 photon experiment of Kocsis and Steinberg to matter waves, and built the forward model showing that a first test is within reach of present cold-atom sources.</p>
+        <h3>Following matter waves without collapsing them</h3>
+        <p>In 2011, Kocsis and Steinberg mapped the average paths of photons through a double slit by nudging each one gently and combining thousands of faint signals. Doing the same for atoms is harder: light bright enough to locate an atom also scrambles the interference you wanted to study. My paper proposes letting falling atoms pass through a curtain of light tuned far from resonance, so each atom leaves only a whisper of a kick on the photons. I worked out the mathematics that turns those whispers into a map of the atoms' momentum, and modelled the whole experiment to show it fits within present cold-atom technology.</p>
         <div class="figs">
           <figure><img src="images/curtain_setup.jpg" alt="Schematic of the proposed experiment: rubidium atoms fall through a double slit and cross dual-colour light curtains at 20 heights before reaching a detection screen" loading="lazy"><figcaption>The proposed experiment: cold rubidium atoms fall through a double slit and cross a light curtain at twenty heights before landing on the screen.</figcaption></figure>
           <figure><img src="images/curtain_regime.jpg" alt="Map of photon number against per-photon coupling showing the viable weak-measurement regime between insufficient statistics and strong measurement, with the chosen operating point" loading="lazy"><figcaption>Where the measurement is gentle enough to keep the interference yet strong enough to read: the green band, with the operating point starred. Regenerated from my published code.</figcaption></figure>
@@ -204,7 +207,7 @@ figcaption{font-size:13px;color:var(--muted);margin-top:8px}
       <article class="card">
         <p class="tag">Statistics · First author</p>
         <h3>When larger samples mislead</h3>
-        <p>A pooled estimate can grow ever more precise while describing no individual in the sample. I wrote the software and analysis for three diagnostics that reveal it from the data alone: a bias that stops shrinking as the sample grows, prediction errors that split by hidden subgroup, and forecast errors that widen with the horizon. In reanalyses of mood-monitoring and cognitive-training data, the pooled estimates matched only 5% and 0.1% of the individual ones.</p>
+        <p>A bigger study is supposed to give a more trustworthy answer. We showed that when people follow genuinely different dynamics, adding more of them only sharpens an average that fits nobody. I built the simulations and the tests that flag the problem from the data itself, and in two real datasets the group answer described almost no one: 5% of people in one, 0.1% in the other.</p>
         <div class="demo" id="pooling-demo">
           <h4>Try it: add more people, and watch the answer grow confident and wrong</h4>
           <label>Participants: <input type="range" id="nslider" min="10" max="2000" step="10" value="40"><span id="nval">40</span></label>
@@ -217,16 +220,16 @@ figcaption{font-size:13px;color:var(--muted);margin-top:8px}
 
       <article class="card">
         <p class="tag">Nonlinear dynamics · Co-author</p>
-        <h3>The structure hidden in the body's noise</h3>
-        <p>Standing balance looks steady, yet its small corrections carry a memory across time scales. Recording younger and older adults on a stable surface and on a wobble board, our team found that the network coordinating those corrections grows paradoxically rigid with age, and that wobble-board dynamics can serve as a scalable test of long-latency reflexes. I collected and curated the motion-capture data behind both studies.</p>
+        <h3>The rhythm inside standing still</h3>
+        <p>Balance looks like stillness, yet it is a stream of small corrections whose timing remembers what came seconds before. Recording younger and older volunteers on firm ground and on a wobble board, our team found that aging stiffens the network linking those corrections, and that an inexpensive wobble board can probe reflexes usually tested with costly equipment. I ran recording sessions and kept the motion-capture data clean and organised for both studies.</p>
         <p class="ref"><i>npj Aging</i> (2026) · <i>GeroScience</i> (2026)</p>
         <div class="links"><a href="https://doi.org/10.1038/s41514-026-00490-7">npj Aging paper</a><a href="https://doi.org/10.1007/s11357-026-02217-8">GeroScience paper</a></div>
       </article>
 
       <article class="card">
         <p class="tag">Theory · Co-author</p>
-        <h3>Why medicine's successes left it unprepared</h3>
-        <p>Medicine triumphed over diseases with one discrete cause, and in doing so built institutions poorly suited to illness distributed across scales, as in aging. I co-wrote this hypothesis-and-theory article on what a multiscale view would change.</p>
+        <h3>What medicine's victories cost it</h3>
+        <p>Modern medicine was built to find the one broken part, and that approach conquered infection. It still struggles with aging, where decline is spread across every scale of the body at once. I co-wrote the argument for why, and sketched what a medicine designed for whole systems might look like.</p>
         <p class="ref"><i>Frontiers in Public Health</i> (2026)</p>
         <div class="links"><a href="https://doi.org/10.3389/fpubh.2026.1932205">Read the article</a></div>
       </article>
@@ -239,24 +242,24 @@ figcaption{font-size:13px;color:var(--muted);margin-top:8px}
   <div class="wrap">
     <p class="ket">|measurement⟩</p>
     <h2>In the lab</h2>
-    <p class="sub">The hardest problems lived between the participant and the data. Two I solved:</p>
+    <p class="sub">Good data are built before they are analysed. Two problems I had to solve first:</p>
     <div class="two">
       <article class="card">
         <p class="tag">Synchronization</p>
-        <h3>Three instruments, one clock</h3>
-        <p>Electroencephalography, motion capture and eye tracking ran on separate computers with separate clocks. I wrote a shared hardware trigger into the EEG and motion-capture streams and aligned the eye tracker with two independent events, a blink and a teeth clench, so that each anchor checked the other and exposed any drift.</p>
+        <h3>Three clocks that disagreed</h3>
+        <p>Brain activity, body motion and gaze were each recorded by a different computer keeping its own time, and a few milliseconds of mismatch would make cause and effect impossible to separate. I sent one hardware pulse into the brain and motion recordings, then locked the eye tracker to two unrelated physical events, a blink and a clenched jaw, so that any drift between them would give itself away.</p>
       </article>
       <article class="card">
         <p class="tag">Validation</p>
-        <h3>Proving the cleaning did not create the signal</h3>
-        <p>EEG recorded during balance was buried in motion artifact. I ran every analysis with and without the cleaning step, tracked the components rejected in each condition, and wrote a diagnostic of exactly what was removed, until a theta-specific effect emerged that the residuals confirmed was real.</p>
+        <h3>A signal I refused to trust too early</h3>
+        <p>When people wobble, their brain recordings fill with muscle and movement noise, and the software that removes it can quietly manufacture the very effect you hope to see. I ran everything twice, with and without the cleaning, counted what the algorithm discarded in each condition, and checked exactly what it took away. Only after an effect in the theta band survived all of that did we accept it.</p>
       </article>
     </div>
     <div class="photos">
       <figure style="margin:0"><img src="images/lab_wobbleboard.jpg" alt="A participant standing on a wobble board wearing motion-capture markers, an EEG cap and a safety harness" loading="lazy"><figcaption>A wobble-board trial: motion-capture markers, EEG and eye tracking recorded together.</figcaption></figure>
       <figure style="margin:0"><img src="images/lab_booth.jpg" alt="Jessica Fabianiak and a colleague at a Biomechanics Research Building outreach table with wobble boards and laptops" loading="lazy"><figcaption>Presenting our wobble-board research at the University of Nebraska Omaha Biomechanics Research Building.</figcaption></figure>
     </div>
-    <p style="margin-top:22px;color:var(--muted);max-width:680px">Earlier, I commissioned a complete high-performance liquid chromatography laboratory at Xenova Sciences, from instrument qualification to validated methods and written procedures. I analyse data in Python, MATLAB and R, and I do my best work where analysis serves hands-on experiments.</p>
+    <p style="margin-top:22px;color:var(--muted);max-width:680px">I am happiest at the bench and beside the apparatus. Python, MATLAB and R are the tools I use to understand what an experiment is telling me.</p>
   </div>
 </section>
 
@@ -264,10 +267,10 @@ figcaption{font-size:13px;color:var(--muted);margin-top:8px}
   <div class="wrap prose">
     <p class="ket">|collaboration⟩</p>
     <h2>Leadership</h2>
-    <p class="sub">The best science happens when different perspectives are set side by side.</p>
-    <p>As co-chair of the <b>International Conference on Perception and Action (ICPA 2026)</b>, I helped bring researchers from more than twenty countries into one programme and ran its budget and committees. My laboratory taught me the same lesson daily: its members came from Greece, Iran, the United States and Canada, and brought engineering, neuroscience and physical therapy to shared data.</p>
+    <p class="sub">Science travels further when people from different places and fields carry it together.</p>
+    <p>In 2026 I co-chaired the <b>International Conference on Perception and Action</b> in Omaha, a gathering of researchers from more than twenty countries. Building its programme, budget and committees showed me how much listening and logistics stand behind a few days of good conversation. My own lab worked the same way: colleagues from Greece, Iran, the United States and Canada, trained in engineering, neuroscience and physical therapy, each noticed something in our data that the others had missed.</p>
     <figure class="wide"><img src="images/icpa2026_group.jpg" alt="Group photo of ICPA 2026 participants outside the Scott Aquarium Conference Center in Omaha" loading="lazy"><figcaption>ICPA 2026 participants at the Scott Aquarium Conference Center, Omaha.</figcaption></figure>
-    <p>I learned to lead in the <b>United States Air Force</b>, where I served as an Aerospace Medical Technician and where leading people was part of every working day. I carry that sense of duty into every team I join.</p>
+    <p>Leadership began earlier, in the <b>United States Air Force</b>, where looking after people was part of every shift. I still think of a team as an instrument that has to be cared for and calibrated like any other.</p>
   </div>
 </section>
 
