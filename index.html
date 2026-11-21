@@ -103,6 +103,14 @@ figcaption{font-size:13px;color:var(--muted);margin-top:8px}
 .demo svg{width:100%;height:auto;display:block;margin-top:10px}
 .demo .out{font-size:14px;margin:10px 0 0}
 .demo .out b{color:var(--accent)}
+
+.hero-grid{display:grid;grid-template-columns:1fr 220px;gap:40px;align-items:center;position:relative}
+.portrait{width:220px;height:220px;border-radius:50%;object-fit:cover;border:3px solid var(--accent);box-shadow:0 0 0 8px color-mix(in srgb,var(--accent) 15%,transparent)}
+@media (max-width:700px){.hero-grid{grid-template-columns:1fr}.portrait{width:150px;height:150px;order:-1}}
+.photos{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}
+.photos img{width:100%;height:340px;object-fit:cover;border-radius:12px;display:block}
+@media (max-width:700px){.photos{grid-template-columns:1fr}.photos img{height:280px}}
+.wide img{width:100%;height:auto;border-radius:12px;display:block}
 footer{padding:36px 0 50px;color:var(--muted);font-size:14px}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 .quote{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:20px;color:var(--muted)}
@@ -126,7 +134,8 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 
 <header class="hero" id="top">
   <div class="stars" aria-hidden="true"></div>
-  <div class="wrap">
+  <div class="wrap hero-grid">
+   <div>
     <p class="eyebrow">Nuclear engineering · Quantum measurement · Complex systems</p>
     <h1>Jessica<br>Fabianiak</h1>
     <p class="lede">There is no shore from which to watch the cosmos. Whatever we learn of it, we learn as part of the current, the way a river might come to know its own course.</p>
@@ -136,6 +145,8 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
       <a class="btn" href="#research">See my research</a>
       <a class="btn" href="mailto:Jessicafabianiak@gmail.com">Email me</a>
     </div>
+   </div>
+   <img class="portrait" src="images/headshot.jpg" alt="Portrait of Jessica Fabianiak">
   </div>
 </header>
 
@@ -218,6 +229,10 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
         <p>EEG recorded during balance was buried in motion artifact. I ran every analysis with and without the cleaning step, tracked the components rejected in each condition, and wrote a diagnostic of exactly what was removed, until a theta-specific effect emerged that the residuals confirmed was real.</p>
       </article>
     </div>
+    <div class="photos">
+      <figure style="margin:0"><img src="images/lab_wobbleboard.jpg" alt="A participant standing on a wobble board wearing motion-capture markers, an EEG cap and a safety harness" loading="lazy"><figcaption>A wobble-board trial: motion-capture markers, EEG and eye tracking recorded together.</figcaption></figure>
+      <figure style="margin:0"><img src="images/lab_booth.jpg" alt="Jessica Fabianiak and a colleague at a Biomechanics Research Building outreach table with wobble boards and laptops" loading="lazy"><figcaption>Presenting our wobble-board research at the University of Nebraska Omaha Biomechanics Research Building.</figcaption></figure>
+    </div>
     <p style="margin-top:22px;color:var(--muted);max-width:680px">Earlier, I commissioned a complete high-performance liquid chromatography laboratory at Xenova Sciences, from instrument qualification to validated methods and written procedures. I analyse data in Python, MATLAB and R, and I do my best work where analysis serves hands-on experiments.</p>
   </div>
 </section>
@@ -227,6 +242,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
     <h2>Leadership</h2>
     <p class="sub">The best science happens when different perspectives are set side by side.</p>
     <p>As co-chair of the <b>International Conference on Perception and Action (ICPA 2026)</b>, I helped bring researchers from more than twenty countries into one programme and ran its budget and committees. My laboratory taught me the same lesson daily: its members came from Greece, Iran, the United States and Canada, and brought engineering, neuroscience and physical therapy to shared data.</p>
+    <figure class="wide"><img src="images/icpa2026_group.jpg" alt="Group photo of ICPA 2026 participants outside the Scott Aquarium Conference Center in Omaha" loading="lazy"><figcaption>ICPA 2026 participants at the Scott Aquarium Conference Center, Omaha.</figcaption></figure>
     <p>I learned to lead in the <b>United States Air Force</b>, where I served as an Aerospace Medical Technician and where leading people was part of every working day. I carry that sense of duty into every team I join.</p>
   </div>
 </section>
