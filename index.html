@@ -7,72 +7,83 @@
 <meta name="description" content="Jessica Fabianiak, master's student in nuclear engineering at Université Paris-Saclay. Research in quantum measurement, nonlinear dynamics and nuclear chemistry.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#0b0e17; --bg-2:#121726; --ink:#e8e6df; --muted:#a3a7b5; --line:#262c40;
-  --accent:#e2b864; --accent-2:#8fb3ff; --card:#111628;
-}
-@media (prefers-color-scheme: light){
-  :root:not([data-theme="dark"]){
-    --bg:#faf8f3; --bg-2:#f1ede3; --ink:#1c1f2a; --muted:#5b6070; --line:#e0dacb;
-    --accent:#9a6a12; --accent-2:#2f56b0; --card:#ffffff;
-  }
-}
-:root[data-theme="light"]{
-  --bg:#faf8f3; --bg-2:#f1ede3; --ink:#1c1f2a; --muted:#5b6070; --line:#e0dacb;
-  --accent:#9a6a12; --accent-2:#2f56b0; --card:#ffffff;
+  --bg:#05060f; --bg-2:#0b0f22; --ink:#e9e7f5; --muted:#9aa0bf; --line:rgba(140,150,230,.18);
+  --accent:#f2c46d; --accent-2:#7cc4ff; --violet:#a78bfa; --card:rgba(16,20,44,.62);
+  color-scheme:dark;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+body{margin:0;color:var(--ink);font:16px/1.65 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;
+  background:
+    radial-gradient(1200px 700px at 85% -10%, rgba(124,92,255,.18), transparent 60%),
+    radial-gradient(900px 600px at -10% 30%, rgba(60,140,255,.12), transparent 60%),
+    radial-gradient(900px 700px at 110% 80%, rgba(242,196,109,.07), transparent 60%),
+    var(--bg);
+  background-attachment:fixed}
+#cosmos{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
 a{color:var(--accent-2);text-decoration:none}
 a:hover{text-decoration:underline}
-.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+.wrap{max-width:880px;margin:0 auto;padding:0 20px}
+.mono{font-family:"JetBrains Mono",ui-monospace,monospace}
 
 /* nav */
-nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav{position:sticky;top:0;z-index:10;background:rgba(5,6,15,.72);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px;gap:12px}
 nav .name{font-family:"Cormorant Garamond",serif;font-size:21px;font-weight:600;color:var(--ink)}
+nav .name span{color:var(--accent);font-family:"JetBrains Mono",monospace;font-size:15px;margin-right:6px}
 nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0;font-size:14px}
 nav ul a{color:var(--muted)}
-nav ul a:hover{color:var(--ink);text-decoration:none}
-@media (max-width:640px){nav ul{display:none}}
+nav ul a:hover{color:var(--accent);text-decoration:none}
+@media (max-width:700px){nav ul{display:none}}
 
 /* hero */
-.hero{position:relative;overflow:hidden;padding:110px 0 90px;border-bottom:1px solid var(--line)}
-.stars{position:absolute;inset:0;pointer-events:none;opacity:.55;
-  background-image:
-   radial-gradient(1px 1px at 12% 22%,var(--ink) 50%,transparent 51%),
-   radial-gradient(1px 1px at 28% 68%,var(--ink) 50%,transparent 51%),
-   radial-gradient(1.5px 1.5px at 44% 34%,var(--accent) 50%,transparent 51%),
-   radial-gradient(1px 1px at 63% 18%,var(--ink) 50%,transparent 51%),
-   radial-gradient(1px 1px at 72% 76%,var(--ink) 50%,transparent 51%),
-   radial-gradient(1.5px 1.5px at 86% 42%,var(--accent-2) 50%,transparent 51%),
-   radial-gradient(1px 1px at 93% 12%,var(--ink) 50%,transparent 51%),
-   radial-gradient(1px 1px at 6% 84%,var(--ink) 50%,transparent 51%),
-   radial-gradient(1px 1px at 54% 88%,var(--ink) 50%,transparent 51%),
-   radial-gradient(1px 1px at 37% 8%,var(--ink) 50%,transparent 51%);}
-.eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 18px}
-h1{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:clamp(44px,8vw,72px);line-height:1.02;margin:0 0 22px}
+.hero{position:relative;overflow:hidden;padding:120px 0 100px;border-bottom:1px solid var(--line)}
+.fringes{position:absolute;inset:0;pointer-events:none;opacity:.22;
+  background:repeating-radial-gradient(circle at 80% 50%, rgba(124,196,255,.55) 0 2px, transparent 2px 26px);
+  -webkit-mask-image:radial-gradient(ellipse at 80% 50%, #000 0%, transparent 62%);
+          mask-image:radial-gradient(ellipse at 80% 50%, #000 0%, transparent 62%)}
+.hero-grid{display:grid;grid-template-columns:1fr 240px;gap:44px;align-items:center;position:relative}
+.eyebrow{font-family:"JetBrains Mono",monospace;font-size:13px;letter-spacing:.06em;color:var(--accent-2);margin:0 0 18px}
+h1{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:clamp(46px,8vw,76px);line-height:1.02;margin:0 0 22px;
+  background:linear-gradient(100deg,#fff 20%, #cdb8ff 60%, #f2c46d 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
 .lede{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(21px,3vw,26px);line-height:1.45;color:var(--ink);max-width:640px;margin:0 0 30px}
 .meta{color:var(--muted);font-size:15px;margin:0 0 30px}
 .btns{display:flex;flex-wrap:wrap;gap:12px}
-.btn{display:inline-block;padding:10px 18px;border:1px solid var(--line);border-radius:999px;font-size:14px;font-weight:500;color:var(--ink)}
-.btn.primary{background:var(--accent);border-color:var(--accent);color:#14110a}
-.btn:hover{text-decoration:none;border-color:var(--accent)}
+.btn{display:inline-block;padding:10px 18px;border:1px solid var(--line);border-radius:999px;font-size:14px;font-weight:500;color:var(--ink);background:rgba(255,255,255,.03)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#1a1405;box-shadow:0 0 24px rgba(242,196,109,.35)}
+.btn:hover{text-decoration:none;border-color:var(--accent-2);box-shadow:0 0 18px rgba(124,196,255,.25)}
+
+/* portrait inside an atom */
+.atom{position:relative;width:240px;height:240px;justify-self:center}
+.portrait{position:absolute;inset:30px;width:180px;height:180px;border-radius:50%;object-fit:cover;border:2px solid var(--accent);box-shadow:0 0 40px rgba(167,139,250,.45)}
+.orbit{position:absolute;inset:0;border:1px solid rgba(124,196,255,.45);border-radius:50%}
+.orbit.o1{transform:rotateX(70deg)}
+.orbit.o2{transform:rotate(60deg) rotateX(70deg);border-color:rgba(167,139,250,.5)}
+.orbit.o3{transform:rotate(-60deg) rotateX(70deg);border-color:rgba(242,196,109,.45)}
+.orbit::after{content:"";position:absolute;top:-4px;left:50%;width:8px;height:8px;margin-left:-4px;border-radius:50%;background:var(--accent-2);box-shadow:0 0 10px var(--accent-2)}
+.spin{position:absolute;inset:0;animation:spin 14s linear infinite}
+.spin.s2{animation-duration:19s;animation-direction:reverse}
+.spin.s3{animation-duration:24s}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (max-width:700px){.hero-grid{grid-template-columns:1fr}.atom{order:-1;width:190px;height:190px}.portrait{inset:25px;width:140px;height:140px}}
 
 /* sections */
-section{padding:76px 0;border-bottom:1px solid var(--line)}
-h2{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:36px;margin:0 0 8px}
+section{padding:80px 0;border-bottom:1px solid var(--line);position:relative}
+.ket{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--violet);margin:0 0 10px;letter-spacing:.04em}
+h2{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:38px;margin:0 0 8px}
 .sub{color:var(--muted);margin:0 0 36px;max-width:640px}
 p{margin:0 0 16px}
-.prose p{max-width:680px}
+.prose p{max-width:690px}
 
-.cards{display:grid;gap:18px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px 24px 20px}
-.card .tag{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0 0 8px}
-.card h3{font-family:"Cormorant Garamond",serif;font-size:24px;font-weight:600;line-height:1.2;margin:0 0 10px}
+.cards{display:grid;gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px 26px 22px;backdrop-filter:blur(6px);
+  transition:border-color .3s, box-shadow .3s}
+.card:hover{border-color:rgba(124,196,255,.45);box-shadow:0 0 0 1px rgba(124,196,255,.15),0 10px 40px rgba(60,80,200,.18)}
+.card .tag{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.04em;color:var(--accent);margin:0 0 8px}
+.card h3{font-family:"Cormorant Garamond",serif;font-size:25px;font-weight:600;line-height:1.2;margin:0 0 10px}
 .card p{color:var(--ink);margin-bottom:10px}
 .card .ref{font-size:14px;color:var(--muted);margin:0}
 
@@ -82,45 +93,49 @@ p{margin:0 0 16px}
 .pubs{list-style:none;padding:0;margin:0}
 .pubs li{padding:14px 0;border-top:1px solid var(--line);font-size:15px}
 .pubs li:first-child{border-top:0}
-.pubs .yr{color:var(--accent);font-weight:600;margin-right:8px}
+.pubs .yr{font-family:"JetBrains Mono",monospace;color:var(--accent);font-weight:600;margin-right:10px}
 .pubs .venue{font-style:italic;color:var(--muted)}
-h4{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:30px 0 6px;font-weight:600}
+h4{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-2);margin:30px 0 6px;font-weight:500}
 
 .contact a{font-weight:500}
+footer{padding:40px 0 56px;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.quote{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:20px;color:var(--muted)}
 
 .links{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0}
-.links a{font-size:13px;font-weight:500;padding:6px 12px;border:1px solid var(--line);border-radius:999px;color:var(--ink)}
-.links a:hover{border-color:var(--accent);text-decoration:none}
+.links a{font-size:13px;font-weight:500;padding:6px 12px;border:1px solid var(--line);border-radius:999px;color:var(--ink);background:rgba(255,255,255,.03)}
+.links a:hover{border-color:var(--accent-2);text-decoration:none;color:var(--accent-2)}
 figure{margin:18px 0 6px}
-figure img{width:100%;height:auto;border-radius:10px;background:#fff;display:block}
+figure img{width:100%;height:auto;border-radius:10px;display:block}
+.figs img{background:#fff}
 figcaption{font-size:13px;color:var(--muted);margin-top:8px}
 .figs{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 @media (max-width:700px){.figs{grid-template-columns:1fr}}
-.demo{margin-top:18px;border:1px solid var(--line);border-radius:12px;padding:18px;background:var(--bg-2)}
+.demo{margin-top:18px;border:1px solid var(--line);border-radius:12px;padding:18px;background:rgba(5,8,24,.7)}
 .demo h4{margin:0 0 6px}
 .demo label{font-size:14px;color:var(--muted);display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .demo input[type=range]{flex:1;min-width:180px;accent-color:var(--accent)}
 .demo svg{width:100%;height:auto;display:block;margin-top:10px}
 .demo .out{font-size:14px;margin:10px 0 0}
 .demo .out b{color:var(--accent)}
-
-.hero-grid{display:grid;grid-template-columns:1fr 220px;gap:40px;align-items:center;position:relative}
-.portrait{width:220px;height:220px;border-radius:50%;object-fit:cover;border:3px solid var(--accent);box-shadow:0 0 0 8px color-mix(in srgb,var(--accent) 15%,transparent)}
-@media (max-width:700px){.hero-grid{grid-template-columns:1fr}.portrait{width:150px;height:150px;order:-1}}
 .photos{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}
 .photos img{width:100%;height:340px;object-fit:cover;border-radius:12px;display:block}
 @media (max-width:700px){.photos{grid-template-columns:1fr}.photos img{height:280px}}
 .wide img{width:100%;height:auto;border-radius:12px;display:block}
-footer{padding:36px 0 50px;color:var(--muted);font-size:14px}
-footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
-.quote{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:20px;color:var(--muted)}
+
+/* interference divider */
+.fringe-rule{height:26px;margin:0;opacity:.6;
+  background:repeating-linear-gradient(90deg, rgba(124,196,255,.0) 0 6px, rgba(124,196,255,.8) 6px 8px, rgba(124,196,255,0) 8px 14px);
+  -webkit-mask-image:radial-gradient(ellipse at center,#000 0%,transparent 70%);mask-image:radial-gradient(ellipse at center,#000 0%,transparent 70%)}
+@media (prefers-reduced-motion:reduce){.spin{animation:none}}
 </style>
 </head>
 <body>
+<canvas id="cosmos" aria-hidden="true"></canvas>
 
 <nav>
   <div class="wrap">
-    <a class="name" href="#top">Jessica Fabianiak</a>
+    <a class="name" href="#top"><span>|ψ⟩</span>Jessica Fabianiak</a>
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#research">Research</a></li>
@@ -133,10 +148,10 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 </nav>
 
 <header class="hero" id="top">
-  <div class="stars" aria-hidden="true"></div>
+  <div class="fringes" aria-hidden="true"></div>
   <div class="wrap hero-grid">
    <div>
-    <p class="eyebrow">Nuclear engineering · Quantum measurement · Complex systems</p>
+    <p class="eyebrow">|nuclear⟩ + |quantum⟩ + |complex systems⟩</p>
     <h1>Jessica<br>Fabianiak</h1>
     <p class="lede">There is no shore from which to watch the cosmos. Whatever we learn of it, we learn as part of the current, the way a river might come to know its own course.</p>
     <p class="meta">Master's student in Nuclear Engineering, Université Paris-Saclay and INSTN · Orsay, France</p>
@@ -146,7 +161,12 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
       <a class="btn" href="mailto:Jessicafabianiak@gmail.com">Email me</a>
     </div>
    </div>
-   <img class="portrait" src="images/headshot.jpg" alt="Portrait of Jessica Fabianiak">
+   <div class="atom" aria-hidden="false">
+     <div class="spin"><div class="orbit o1"></div></div>
+     <div class="spin s2"><div class="orbit o2"></div></div>
+     <div class="spin s3"><div class="orbit o3"></div></div>
+     <img class="portrait" src="images/headshot.jpg" alt="Portrait of Jessica Fabianiak">
+   </div>
   </div>
 </header>
 
@@ -154,6 +174,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 
 <section id="about">
   <div class="wrap prose">
+    <p class="ket">⟨ψ|about⟩</p>
     <h2>About</h2>
     <p class="sub">A chemist who came to physics sideways, and a veteran who learned to lead before learning to measure.</p>
     <p>Every problem I have worked on has asked the same question: how do you learn about a system while belonging to it? I first met that question in a chemistry laboratory, then in a movement laboratory where the body's own noise turned out to carry structure across scales, and now in quantum mechanics, which I have read about since I was young and where every measurement disturbs what it records.</p>
@@ -163,6 +184,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 
 <section id="research">
   <div class="wrap">
+    <p class="ket">Ĥ|research⟩</p>
     <h2>Research</h2>
     <p class="sub">Four questions, one thread: knowing when a measurement, a model or an average can be trusted.</p>
     <div class="cards">
@@ -215,6 +237,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 
 <section id="lab">
   <div class="wrap">
+    <p class="ket">|measurement⟩</p>
     <h2>In the lab</h2>
     <p class="sub">The hardest problems lived between the participant and the data. Two I solved:</p>
     <div class="two">
@@ -239,6 +262,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 
 <section id="leadership">
   <div class="wrap prose">
+    <p class="ket">|collaboration⟩</p>
     <h2>Leadership</h2>
     <p class="sub">The best science happens when different perspectives are set side by side.</p>
     <p>As co-chair of the <b>International Conference on Perception and Action (ICPA 2026)</b>, I helped bring researchers from more than twenty countries into one programme and ran its budget and committees. My laboratory taught me the same lesson daily: its members came from Greece, Iran, the United States and Canada, and brought engineering, neuroscience and physical therapy to shared data.</p>
@@ -249,6 +273,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 
 <section id="publications">
   <div class="wrap">
+    <p class="ket">⟨record⟩</p>
     <h2>Publications</h2>
     <h4>Peer-reviewed</h4>
     <ul class="pubs">
@@ -268,6 +293,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 
 <section id="contact" class="contact">
   <div class="wrap prose">
+    <p class="ket">|entangle⟩</p>
     <h2>Contact</h2>
     <p class="sub">I am looking for experimental research in nuclear and particle physics for 2027.</p>
     <p>Email: <a href="mailto:Jessicafabianiak@gmail.com">Jessicafabianiak@gmail.com</a><br>
@@ -326,6 +352,32 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
   }
   sl.addEventListener('input',draw); draw();
   if(window.matchMedia)window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change',draw);
+})();
+</script>
+
+<script>
+(function(){
+  var c=document.getElementById('cosmos'),x=c.getContext('2d'),dpr=Math.min(window.devicePixelRatio||1,2),stars=[],tracks=[],W,H;
+  var still=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function size(){W=c.width=innerWidth*dpr;H=c.height=innerHeight*dpr;c.style.width=innerWidth+'px';c.style.height=innerHeight+'px';
+    stars=[];var n=Math.round(innerWidth*innerHeight/3500);
+    for(var i=0;i<n;i++)stars.push({x:Math.random()*W,y:Math.random()*H,r:(Math.random()*1.2+.2)*dpr,p:Math.random()*6.28,s:.4+Math.random()*1.6,h:Math.random()<.12?(Math.random()<.5?'242,196,109':'124,196,255'):'235,235,255'});}
+  function spawn(){ // a curling particle track, like a bubble-chamber trail
+    var ang=Math.random()*6.28; tracks.push({x:Math.random()*W,y:Math.random()*H,a:ang,v:(1.4+Math.random()*1.6)*dpr,k:(Math.random()<.5?-1:1)*(.012+Math.random()*.03),life:0,max:120+Math.random()*120,pts:[],col:Math.random()<.5?'124,196,255':'167,139,250'});}
+  function frame(t){
+    x.clearRect(0,0,W,H);
+    for(var i=0;i<stars.length;i++){var s=stars[i],a=.35+.65*Math.abs(Math.sin(s.p+t*.0006*s.s));
+      x.fillStyle='rgba('+s.h+','+(still?.8:a)+')';x.beginPath();x.arc(s.x,s.y,s.r,0,6.283);x.fill();}
+    if(!still){
+      if(Math.random()<.012&&tracks.length<3)spawn();
+      for(var j=tracks.length-1;j>=0;j--){var k=tracks[j];k.life++;k.a+=k.k;k.k*=1.004;k.v*=.996;k.x+=Math.cos(k.a)*k.v;k.y+=Math.sin(k.a)*k.v;k.pts.push([k.x,k.y]);
+        var fade=1-k.life/k.max; if(fade<=0){tracks.splice(j,1);continue;}
+        x.strokeStyle='rgba('+k.col+','+(.5*fade)+')';x.lineWidth=1*dpr;x.beginPath();
+        for(var m=0;m<k.pts.length;m++){var q=k.pts[m];m?x.lineTo(q[0],q[1]):x.moveTo(q[0],q[1]);}x.stroke();}
+      requestAnimationFrame(frame);}
+  }
+  addEventListener('resize',function(){size();if(still)frame(0);});size();
+  still?frame(0):requestAnimationFrame(frame);
 })();
 </script>
 </body>
