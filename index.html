@@ -7,7 +7,7 @@
 <meta name="description" content="Jessica Fabianiak, master's student in nuclear engineering at Université Paris-Saclay. Research in quantum measurement, nonlinear dynamics and nuclear chemistry.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@600&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#05060f; --bg-2:#0b0f22; --ink:#e9e7f5; --muted:#9aa0bf; --line:rgba(140,150,230,.18);
@@ -151,6 +151,12 @@ figcaption{font-size:13px;color:var(--muted);margin-top:8px}
 #cat-tip{position:fixed;z-index:51;pointer-events:none;font:12px "JetBrains Mono",monospace;color:var(--accent);opacity:0;transition:opacity .6s;white-space:nowrap}
 #cat-tip.on{opacity:.9}
 @media (prefers-reduced-motion:reduce){#cat,#cat-tip{display:none}}
+
+.wide .frame{position:relative}
+.me-arrow{position:absolute;left:0%;top:48%;width:12%;overflow:visible;pointer-events:none}
+.me-arrow path{fill:none;stroke:var(--accent);stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 1px 2px rgba(0,0,0,.6))}
+.me-label{position:absolute;left:1%;top:37%;font-family:Caveat,cursive;font-weight:600;font-size:clamp(20px,3.2vw,34px);color:var(--accent);text-shadow:0 1px 3px rgba(0,0,0,.7);transform:rotate(-8deg);pointer-events:none}
+.signature{font-family:Caveat,cursive;font-weight:600;font-size:38px;color:var(--accent);transform:rotate(-4deg);display:inline-block;margin-top:6px}
 </style>
 </head>
 <body>
@@ -225,6 +231,7 @@ figcaption{font-size:13px;color:var(--muted);margin-top:8px}
     <p><b>The wobble board.</b> In Dr. Mangalam's movement laboratory there was no room for error. Every recording had to be clean before it was analysed, and every analysis had to survive scrutiny before it was believed. I was held to the same standard as the PhD students and kept pace with them. That care was rewarded by what the data held: a person balancing on a wobble board makes a continuous stream of small corrections, each carrying a faint memory of the ones before it, a fractal structure that shifts as we age.</p>
     <p><b>The double slit.</b> Quantum mechanics has been with me since the books I read as a child, and it was the natural place to take that rigour further. There, observing a thing changes it, so deciding what you can honestly claim becomes the entire problem.</p>
     <p><b>The next instrument.</b> That path brought me to Paris-Saclay to study nuclear engineering at INSTN, and it points toward a doctorate in nuclear and particle physics, where detectors are the senses we build for a world too small to see.</p>
+    <span class="signature">Jess</span>
   </div>
 </section>
 
@@ -305,7 +312,8 @@ figcaption{font-size:13px;color:var(--muted);margin-top:8px}
     <p class="sub">Science travels further when people from different places and fields carry it together.</p>
     <p>In 2026 I organized the <b>International Conference on Perception and Action</b> in Omaha as its co-chair, bringing researchers from more than twenty countries into a single conversation. A meeting like that is built from months of quiet decisions, and its success is measured by how little anyone notices them: when the sessions open, the science has the room.</p>
     <p>That work is what draws me to large international collaborations. I have since moved my studies to France, into a programme run with the country's national nuclear research institutions, and working across languages, disciplines and borders has become, for me, the ordinary shape of science.</p>
-    <figure class="wide"><img src="images/icpa2026_group.jpg" alt="Group photo of ICPA 2026 participants outside the Scott Aquarium Conference Center in Omaha" loading="lazy"><figcaption>ICPA 2026 participants at the Scott Aquarium Conference Center, Omaha.</figcaption></figure>
+    <figure class="wide"><div class="frame"><img src="images/icpa2026_group.jpg" alt="Group photo of ICPA 2026 participants outside the Scott Aquarium Conference Center in Omaha" loading="lazy"><span class="me-label">me</span>
+      <svg class="me-arrow" viewBox="0 0 100 100" aria-hidden="true"><path d="M12 8 C 40 0, 55 25, 35 38 C 20 48, 22 22, 45 26 C 70 30, 72 62, 70 92"/><path d="M58 80 L70 94 L80 79"/></svg></div><figcaption>ICPA 2026 participants at the Scott Aquarium Conference Center, Omaha.</figcaption></figure>
   </div>
 </section>
 
