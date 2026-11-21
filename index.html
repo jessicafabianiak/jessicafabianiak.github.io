@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jessica Fabianiak</title>
+<meta name="description" content="Jessica Fabianiak, master's student in nuclear engineering at Université Paris-Saclay. Research in quantum measurement, nonlinear dynamics and nuclear chemistry.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0e17; --bg-2:#121726; --ink:#e8e6df; --muted:#a3a7b5; --line:#262c40;
+  --accent:#e2b864; --accent-2:#8fb3ff; --card:#111628;
+}
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]){
+    --bg:#faf8f3; --bg-2:#f1ede3; --ink:#1c1f2a; --muted:#5b6070; --line:#e0dacb;
+    --accent:#9a6a12; --accent-2:#2f56b0; --card:#ffffff;
+  }
+}
+:root[data-theme="light"]{
+  --bg:#faf8f3; --bg-2:#f1ede3; --ink:#1c1f2a; --muted:#5b6070; --line:#e0dacb;
+  --accent:#9a6a12; --accent-2:#2f56b0; --card:#ffffff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-2);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+
+/* nav */
+nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px;gap:12px}
+nav .name{font-family:"Cormorant Garamond",serif;font-size:21px;font-weight:600;color:var(--ink)}
+nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0;font-size:14px}
+nav ul a{color:var(--muted)}
+nav ul a:hover{color:var(--ink);text-decoration:none}
+@media (max-width:640px){nav ul{display:none}}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:110px 0 90px;border-bottom:1px solid var(--line)}
+.stars{position:absolute;inset:0;pointer-events:none;opacity:.55;
+  background-image:
+   radial-gradient(1px 1px at 12% 22%,var(--ink) 50%,transparent 51%),
+   radial-gradient(1px 1px at 28% 68%,var(--ink) 50%,transparent 51%),
+   radial-gradient(1.5px 1.5px at 44% 34%,var(--accent) 50%,transparent 51%),
+   radial-gradient(1px 1px at 63% 18%,var(--ink) 50%,transparent 51%),
+   radial-gradient(1px 1px at 72% 76%,var(--ink) 50%,transparent 51%),
+   radial-gradient(1.5px 1.5px at 86% 42%,var(--accent-2) 50%,transparent 51%),
+   radial-gradient(1px 1px at 93% 12%,var(--ink) 50%,transparent 51%),
+   radial-gradient(1px 1px at 6% 84%,var(--ink) 50%,transparent 51%),
+   radial-gradient(1px 1px at 54% 88%,var(--ink) 50%,transparent 51%),
+   radial-gradient(1px 1px at 37% 8%,var(--ink) 50%,transparent 51%);}
+.eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 18px}
+h1{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:clamp(44px,8vw,72px);line-height:1.02;margin:0 0 22px}
+.lede{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(21px,3vw,26px);line-height:1.45;color:var(--ink);max-width:640px;margin:0 0 30px}
+.meta{color:var(--muted);font-size:15px;margin:0 0 30px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:10px 18px;border:1px solid var(--line);border-radius:999px;font-size:14px;font-weight:500;color:var(--ink)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#14110a}
+.btn:hover{text-decoration:none;border-color:var(--accent)}
+
+/* sections */
+section{padding:76px 0;border-bottom:1px solid var(--line)}
+h2{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:36px;margin:0 0 8px}
+.sub{color:var(--muted);margin:0 0 36px;max-width:640px}
+p{margin:0 0 16px}
+.prose p{max-width:680px}
+
+.cards{display:grid;gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px 24px 20px}
+.card .tag{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0 0 8px}
+.card h3{font-family:"Cormorant Garamond",serif;font-size:24px;font-weight:600;line-height:1.2;margin:0 0 10px}
+.card p{color:var(--ink);margin-bottom:10px}
+.card .ref{font-size:14px;color:var(--muted);margin:0}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media (max-width:700px){.two{grid-template-columns:1fr}}
+
+.pubs{list-style:none;padding:0;margin:0}
+.pubs li{padding:14px 0;border-top:1px solid var(--line);font-size:15px}
+.pubs li:first-child{border-top:0}
+.pubs .yr{color:var(--accent);font-weight:600;margin-right:8px}
+.pubs .venue{font-style:italic;color:var(--muted)}
+h4{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:30px 0 6px;font-weight:600}
+
+.contact a{font-weight:500}
+footer{padding:36px 0 50px;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.quote{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:20px;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="name" href="#top">Jessica Fabianiak</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#lab">In the lab</a></li>
+      <li><a href="#leadership">Leadership</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="stars" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="eyebrow">Nuclear engineering · Quantum measurement · Complex systems</p>
+    <h1>Jessica<br>Fabianiak</h1>
+    <p class="lede">There is no shore from which to watch the cosmos. Whatever we learn of it, we learn as part of the current, the way a river might come to know its own course.</p>
+    <p class="meta">Master's student in Nuclear Engineering, Université Paris-Saclay and INSTN · Orsay, France</p>
+    <div class="btns">
+      <a class="btn primary" href="Fabianiak_CV.pdf">Download CV</a>
+      <a class="btn" href="#research">See my research</a>
+      <a class="btn" href="mailto:Jessicafabianiak@gmail.com">Email me</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section id="about">
+  <div class="wrap prose">
+    <h2>About</h2>
+    <p class="sub">A chemist who came to physics sideways, and a veteran who learned to lead before learning to measure.</p>
+    <p>Every problem I have worked on has asked the same question: how do you learn about a system while belonging to it? I first met that question in a chemistry laboratory, then in a movement laboratory where the body's own noise turned out to carry structure across scales, and now in quantum mechanics, which I have read about since I was young and where every measurement disturbs what it records.</p>
+    <p>I am a first-year master's student in Nuclear Engineering at Université Paris-Saclay, on the chemistry and chemical engineering track taught with INSTN at CEA Saclay. I hold a Bachelor of Science in Chemistry with a minor in Biomechanics from the University of Nebraska Omaha. Before science I served in the United States Air Force, and I plan to pursue a doctorate in nuclear and particle physics.</p>
+  </div>
+</section>
+
+<section id="research">
+  <div class="wrap">
+    <h2>Research</h2>
+    <p class="sub">Four questions, one thread: knowing when a measurement, a model or an average can be trusted.</p>
+    <div class="cards">
+
+      <article class="card">
+        <p class="tag">Quantum measurement · First author</p>
+        <h3>Asking an atom where it is going, without spoiling the interference</h3>
+        <p>Atoms crossing a double slit build an interference pattern, and a probe strong enough to see where they are usually destroys it. My paper proposes a gentle probe: a curtain of far-detuned light whose faint deflection carries information about each atom. I derived the formula that turns that deflection into the atoms' conditional momentum field, extending the 2011 photon experiment of Kocsis and Steinberg to matter waves, and built the forward model showing that a first test is within reach of present cold-atom sources.</p>
+        <p class="ref">Fabianiak and Deligiannis · revised manuscript under review at <i>New Journal of Physics</i> · <a href="https://doi.org/10.5281/zenodo.22554166">preprint</a></p>
+      </article>
+
+      <article class="card">
+        <p class="tag">Statistics · First author</p>
+        <h3>When larger samples mislead</h3>
+        <p>A pooled estimate can grow ever more precise while describing no individual in the sample. I wrote the software and analysis for three diagnostics that reveal it from the data alone: a bias that stops shrinking as the sample grows, prediction errors that split by hidden subgroup, and forecast errors that widen with the horizon. In reanalyses of mood-monitoring and cognitive-training data, the pooled estimates matched only 5% and 0.1% of the individual ones.</p>
+        <p class="ref">Fabianiak and Mangalam · manuscript</p>
+      </article>
+
+      <article class="card">
+        <p class="tag">Nonlinear dynamics · Co-author</p>
+        <h3>The structure hidden in the body's noise</h3>
+        <p>Standing balance looks steady, yet its small corrections carry a memory across time scales. Recording younger and older adults on a stable surface and on a wobble board, our team found that the network coordinating those corrections grows paradoxically rigid with age, and that wobble-board dynamics can serve as a scalable test of long-latency reflexes. I collected and curated the motion-capture data behind both studies.</p>
+        <p class="ref"><i>npj Aging</i> (2026) · <i>GeroScience</i> (2026)</p>
+      </article>
+
+      <article class="card">
+        <p class="tag">Theory · Co-author</p>
+        <h3>Why medicine's successes left it unprepared</h3>
+        <p>Medicine triumphed over diseases with one discrete cause, and in doing so built institutions poorly suited to illness distributed across scales, as in aging. I co-wrote this hypothesis-and-theory article on what a multiscale view would change.</p>
+        <p class="ref"><i>Frontiers in Public Health</i> (2026)</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="lab">
+  <div class="wrap">
+    <h2>In the lab</h2>
+    <p class="sub">The hardest problems lived between the participant and the data. Two I solved:</p>
+    <div class="two">
+      <article class="card">
+        <p class="tag">Synchronization</p>
+        <h3>Three instruments, one clock</h3>
+        <p>Electroencephalography, motion capture and eye tracking ran on separate computers with separate clocks. I wrote a shared hardware trigger into the EEG and motion-capture streams and aligned the eye tracker with two independent events, a blink and a teeth clench, so that each anchor checked the other and exposed any drift.</p>
+      </article>
+      <article class="card">
+        <p class="tag">Validation</p>
+        <h3>Proving the cleaning did not create the signal</h3>
+        <p>EEG recorded during balance was buried in motion artifact. I ran every analysis with and without the cleaning step, tracked the components rejected in each condition, and wrote a diagnostic of exactly what was removed, until a theta-specific effect emerged that the residuals confirmed was real.</p>
+      </article>
+    </div>
+    <p style="margin-top:22px;color:var(--muted);max-width:680px">Earlier, I commissioned a complete high-performance liquid chromatography laboratory at Xenova Sciences, from instrument qualification to validated methods and written procedures. I analyse data in Python, MATLAB and R, and I do my best work where analysis serves hands-on experiments.</p>
+  </div>
+</section>
+
+<section id="leadership">
+  <div class="wrap prose">
+    <h2>Leadership</h2>
+    <p class="sub">The best science happens when different perspectives are set side by side.</p>
+    <p>As co-chair of the <b>International Conference on Perception and Action (ICPA 2026)</b>, I helped bring researchers from more than twenty countries into one programme and ran its budget and committees. My laboratory taught me the same lesson daily: its members came from Greece, Iran, the United States and Canada, and brought engineering, neuroscience and physical therapy to shared data.</p>
+    <p>I learned to lead in the <b>United States Air Force</b>, where I served as an Aerospace Medical Technician and where leading people was part of every working day. I carry that sense of duty into every team I join.</p>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="wrap">
+    <h2>Publications</h2>
+    <h4>Peer-reviewed</h4>
+    <ul class="pubs">
+      <li><span class="yr">2026</span>Mangalam M, Schlattmann B, <b>Fabianiak J</b>, Deligiannis T. Paradoxical network rigidity and peripheral decoupling: age-related breakdown of adaptive postural control. <span class="venue">npj Aging.</span> <a href="https://doi.org/10.1038/s41514-026-00490-7">doi</a></li>
+      <li><span class="yr">2026</span>Deligiannis T, Barfi M, <b>Fabianiak J</b>, Schlattmann B, Kiyono K, Kelty-Stephen DG, Mangalam M. Wobble-board dynamics as a scalable assay of long-latency reflex function in aging. <span class="venue">GeroScience.</span> <a href="https://doi.org/10.1007/s11357-026-02217-8">doi</a></li>
+      <li><span class="yr">2026</span>Mangalam M, <b>Fabianiak J</b>, Cense B. The success–failure inversion in modern medicine. <span class="venue">Frontiers in Public Health</span> 14:1932205. <a href="https://doi.org/10.3389/fpubh.2026.1932205">doi</a></li>
+      <li><span class="yr">2026</span>Mangalam M, <b>Fabianiak J</b>, Kiyono K. The ontology of digital measurement: what biomarkers reveal about the nature of health data. <span class="venue">npj Digital Medicine</span>, in press.</li>
+      <li><span class="yr">2026</span>Mangalam M, <b>Fabianiak J</b>. The movement imperative: reimagining healthcare through the lens of human movement. <span class="venue">Frontiers in Sports and Active Living</span> 8:1667847. <a href="https://doi.org/10.3389/fspor.2026.1667847">doi</a></li>
+    </ul>
+    <h4>Under review</h4>
+    <ul class="pubs">
+      <li><span class="yr">2026</span><b>Fabianiak J</b>, Deligiannis T. Weak-measurement reconstruction of the conditional momentum field for atomic matter waves: a dispersive photon-curtain protocol following Kocsis–Steinberg. <span class="venue">New Journal of Physics.</span> <a href="https://doi.org/10.5281/zenodo.22554166">preprint</a></li>
+      <li><span class="yr">2026</span>Mangalam M, <b>Fabianiak J</b>. Parametric versus functional heterogeneity and the limits of population inference. <span class="venue">Journal of the Royal Statistical Society, Series A.</span> <a href="https://doi.org/10.13140/RG.2.2.30304.55042">preprint</a></li>
+    </ul>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap prose">
+    <h2>Contact</h2>
+    <p class="sub">I am looking for experimental research in nuclear and particle physics for 2027.</p>
+    <p>Email: <a href="mailto:Jessicafabianiak@gmail.com">Jessicafabianiak@gmail.com</a><br>
+    ORCID: <a href="https://orcid.org/0009-0004-3872-0422">0009-0004-3872-0422</a><br>
+    GitHub: <a href="https://github.com/jessicafabianiak">jessicafabianiak</a><br>
+    CV: <a href="Fabianiak_CV.pdf">download PDF</a></p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="quote">We are made of star-stuff.</span>
+    <span>© 2026 Jessica Fabianiak</span>
+  </div>
+</footer>
+
+</body>
+</html>
