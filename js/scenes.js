@@ -18,8 +18,8 @@
   var ejecta=[], EL=['H','He','C','N','O','Ne','Si','Fe','Ni','Au','U'];
   for(i=0;i<46;i++) ejecta.push({a:r()*6.283,v:.25+r()*.75,o:r(),el:EL[Math.floor(r()*EL.length)]});
   var places=[ // name, lat, lon
-    ['Omaha',41.26,-95.94],['New Paltz',41.75,-74.09],['France',48.71,2.17],['Greece',37.98,23.73],['Osaka',34.69,135.5],['Perth',-31.95,115.86],
-    ['Boston',42.34,-71.09,1,18],['Potsdam',52.40,13.07,1],['India',12.30,76.64,1]]; // 4th field = lab network (Dr. Mangalam's collaborators)
+    ['Omaha',41.26,-95.94],['United States',41.75,-74.09],['France',48.71,2.17],['Greece',37.98,23.73],['Japan',34.69,135.5],['Australia',-31.95,115.86],
+    ['Germany',52.40,13.07,1],['India',12.30,76.64,1]]; // 4th field = lab network (Dr. Mangalam's collaborators)
   var crowd=[]; for(i=0;i<56;i++){crowd.push({col:i%14,row:Math.floor(i/14),h:.8+r()*.45,g:r()<.5,ph:r()*6.28,sp:.6+r()*1.4});}
   var hits=[]; // double-slit screen hits
   function slitSample(){ // sample interference pattern y in [-1,1]
