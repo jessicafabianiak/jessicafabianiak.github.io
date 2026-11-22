@@ -161,10 +161,22 @@ figcaption{font-size:13px;color:var(--muted);margin-top:8px}
 .me-arrow path{fill:none;stroke:var(--accent);stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 1px 2px rgba(0,0,0,.6))}
 .me-label{position:absolute;left:1%;top:24%;font-family:Caveat,cursive;font-weight:600;font-size:clamp(20px,3.2vw,34px);color:var(--accent);text-shadow:0 1px 3px rgba(0,0,0,.7);transform:rotate(-8deg);pointer-events:none}
 .signature{font-family:Caveat,cursive;font-weight:600;font-size:38px;color:var(--accent);transform:rotate(-4deg);display:inline-block;margin-top:6px}
+
+/* multiscale scenes */
+body{background:#04050c}
+section{min-height:150vh;padding:32vh 0 32vh;border-bottom:0;display:flex;align-items:center}
+section>.wrap{background:rgba(5,7,18,.66);border:1px solid var(--line);border-radius:22px;padding:40px 36px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+@media (max-width:700px){section{min-height:130vh;padding:22vh 0}section>.wrap{padding:28px 20px;margin:0 12px}}
+#publications{min-height:auto}
+.hero{min-height:120vh;border-bottom:0;padding:22vh 0 30vh}
+#gauge{position:fixed;left:18px;bottom:16px;z-index:20;font:12px "JetBrains Mono",monospace;color:var(--accent-2);display:flex;align-items:center;gap:10px;background:rgba(5,7,18,.6);border:1px solid var(--line);padding:6px 12px;border-radius:999px;backdrop-filter:blur(6px)}
+@media (max-width:700px){#gauge{font-size:10px;padding:4px 10px;left:10px;bottom:10px}}
+#gauge .tick{width:18px;height:2px;background:var(--accent);box-shadow:0 0 8px var(--accent)}
 </style>
 </head>
 <body>
 <canvas id="cosmos" aria-hidden="true"></canvas>
+<div id="gauge" aria-hidden="true"><span class="tick"></span><span id="gauge-val">10²¹ m · a galaxy</span></div>
 
 <div id="cat" aria-hidden="true"><div class="flip">
 <svg viewBox="0 0 72 52">
@@ -212,17 +224,18 @@ figcaption{font-size:13px;color:var(--muted);margin-top:8px}
     <a class="name" href="#top"><span>|ψ⟩</span>Jessica Fabianiak</a>
     <ul>
       <li><a href="#about">About</a></li>
+      <li><a href="#leadership">Leadership</a></li>
       <li><a href="#research">Research</a></li>
       <li><a href="#lab">The lab</a></li>
-      <li><a href="#leadership">Leadership</a></li>
-      <li><a href="#publications">Publications</a></li>
+      <li><a href="#quantum">Quantum</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li><a href="#publications">Publications</a></li>
     </ul>
   </div>
 </nav>
 
-<header class="hero" id="top">
-  <div class="fringes" aria-hidden="true"></div>
+<header class="hero" id="top" data-scene="galaxy" data-scale="10²¹ m · a galaxy">
+  
   <div class="wrap hero-grid">
    <div>
     <p class="eyebrow">|nuclear⟩ + |quantum⟩ + |complex systems⟩</p>
@@ -243,8 +256,7 @@ figcaption{font-size:13px;color:var(--muted);margin-top:8px}
 </header>
 
 <main>
-
-<section id="about">
+<section data-scene="star" data-scale="10⁹ m · a star" id="about">
   <div class="wrap prose">
     <p class="ket">⟨ψ|about⟩</p>
     <h2>About</h2>
@@ -256,26 +268,22 @@ figcaption{font-size:13px;color:var(--muted);margin-top:8px}
     <p><b>The next instrument.</b> That path brought me to Paris-Saclay to study nuclear engineering at INSTN, and it points toward a doctorate in nuclear and particle physics, where detectors are the senses we build for a world too small to see.</p>
   </div>
 </section>
-
-<section id="research">
+<section data-scene="earth" data-scale="10⁷ m · Earth" id="leadership">
+  <div class="wrap prose">
+    <p class="ket">|collaboration⟩</p>
+    <h2>Leadership</h2>
+    <p class="sub">Science travels further when people from different places and fields carry it together.</p>
+    <p>In 2026 I organized the <b>International Conference on Perception and Action</b> in Omaha as its co-chair, bringing researchers from more than twenty countries into a single conversation. A meeting like that is built from months of quiet decisions, and its success is measured by how little anyone notices them: when the sessions open, the science has the room.</p>
+    <p>That work is what draws me to large international collaborations. I have since moved my studies to France, into a programme run with the country's national nuclear research institutions, and working across languages, disciplines and borders has become, for me, the ordinary shape of science.</p>
+    <figure class="wide"><div class="frame"><img src="images/icpa2026_group.jpg" alt="Group photo of ICPA 2026 participants outside the Scott Aquarium Conference Center in Omaha" loading="lazy"></div><figcaption>ICPA 2026 participants at the Scott Aquarium Conference Center, Omaha.</figcaption></figure>
+  </div>
+</section>
+<section data-scene="crowd" data-scale="10² m · a population" id="research">
   <div class="wrap">
     <p class="ket">Ĥ|research⟩</p>
     <h2>Research</h2>
     <p class="sub">Each project started as a doubt about something people usually take on trust.</p>
     <div class="cards">
-
-      <article class="card">
-        <p class="tag">Quantum measurement · First author</p>
-        <h3>Following matter waves without collapsing them</h3>
-        <p>In 2011, Kocsis and Steinberg mapped the average paths of photons through a double slit by nudging each one gently and combining thousands of faint signals. Doing the same for atoms is harder: light bright enough to locate an atom also scrambles the interference you wanted to study. My paper proposes letting falling atoms pass through a curtain of light tuned far from resonance, so each atom leaves only a whisper of a kick on the photons. I worked out the mathematics that turns those whispers into a map of the atoms' momentum, and modelled the whole experiment to show it fits within present cold-atom technology.</p>
-        <div class="figs">
-          <figure><img src="images/curtain_setup.jpg" alt="Schematic of the proposed experiment: rubidium atoms fall through a double slit and cross dual-colour light curtains at 20 heights before reaching a detection screen" loading="lazy"><figcaption>The proposed experiment: cold rubidium atoms fall through a double slit and cross a light curtain at twenty heights before landing on the screen.</figcaption></figure>
-          <figure><img src="images/curtain_regime.jpg" alt="Map of photon number against per-photon coupling showing the viable weak-measurement regime between insufficient statistics and strong measurement, with the chosen operating point" loading="lazy"><figcaption>Where the measurement is gentle enough to keep the interference yet strong enough to read: the green band, with the operating point starred. Regenerated from my published code.</figcaption></figure>
-        </div>
-        <p class="ref">Fabianiak and Deligiannis · revised manuscript under review at <i>New Journal of Physics</i></p>
-        <div class="links"><a href="https://doi.org/10.5281/zenodo.22554166">Read the preprint</a><a href="https://github.com/jessicafabianiak/weak-measurement-matter-waves">Code on GitHub</a></div>
-      </article>
-
       <article class="card">
         <p class="tag">Statistics · First author</p>
         <h3>When larger samples mislead</h3>
@@ -290,15 +298,6 @@ figcaption{font-size:13px;color:var(--muted);margin-top:8px}
         <p class="ref">Fabianiak and Mangalam · preprint (2026)</p>
         <div class="links"><a href="https://www.researchgate.net/publication/400930778_When_larger_samples_mislead">Read the preprint</a></div>
       </article>
-
-      <article class="card">
-        <p class="tag">Nonlinear dynamics · Co-author</p>
-        <h3>The rhythm inside standing still</h3>
-        <p>Balance looks like stillness, yet it is a stream of small corrections whose timing remembers what came seconds before. Recording younger and older volunteers on firm ground and on a wobble board, our team found that aging stiffens the network linking those corrections, and that wobble-board motion offers a noninvasive readout of long-latency reflex function: older adults corrected with larger excursions, while the fractal timing of their corrections stayed intact.</p>
-        <p class="ref"><i>npj Aging</i> (2026) · <i>GeroScience</i> (2026)</p>
-        <div class="links"><a href="https://doi.org/10.1038/s41514-026-00490-7">npj Aging paper</a><a href="https://doi.org/10.1007/s11357-026-02217-8">GeroScience paper</a></div>
-      </article>
-
       <article class="card">
         <p class="tag">Theory · Co-author</p>
         <h3>The success-failure inversion in modern medicine</h3>
@@ -306,12 +305,10 @@ figcaption{font-size:13px;color:var(--muted);margin-top:8px}
         <p class="ref"><i>Frontiers in Public Health</i> (2026)</p>
         <div class="links"><a href="https://doi.org/10.3389/fpubh.2026.1932205">Read the article</a></div>
       </article>
-
     </div>
   </div>
 </section>
-
-<section id="lab">
+<section data-scene="person" data-scale="10⁰ m · a person" id="lab">
   <div class="wrap">
     <p class="ket">|measurement⟩</p>
     <h2>The lab</h2>
@@ -320,25 +317,51 @@ figcaption{font-size:13px;color:var(--muted);margin-top:8px}
     <p>The Multiscale Modeling Laboratory, led by Dr. Madhur Mangalam at the University of Nebraska Omaha, studies the body as a complex system. Its question is how balance, perception and action hold together across scales, from a single muscle to the whole body, and how that coordination frays with age. In 2026, Dr. Mangalam was named among the world's top 2% of scientists in the Stanford University and Elsevier ranking of research impact.</p>
     <p>I kept the laboratory running: equipment ordered, participants scheduled, data exported cleanly, projects moving. A well-run lab leaves room to think, and I used it. I raised ideas at the table, Dr. Mangalam took them seriously, and a first invitation to co-author grew into international collaborations with researchers in Japan and Australia.</p>
     </div>
+    <div class="cards" style="margin-top:22px"><article class="card">
+        <p class="tag">Nonlinear dynamics · Co-author</p>
+        <h3>The rhythm inside standing still</h3>
+        <p>Balance looks like stillness, yet it is a stream of small corrections whose timing remembers what came seconds before. Recording younger and older volunteers on firm ground and on a wobble board, our team found that aging stiffens the network linking those corrections, and that wobble-board motion offers a noninvasive readout of long-latency reflex function: older adults corrected with larger excursions, while the fractal timing of their corrections stayed intact.</p>
+        <p class="ref"><i>npj Aging</i> (2026) · <i>GeroScience</i> (2026)</p>
+        <div class="links"><a href="https://doi.org/10.1038/s41514-026-00490-7">npj Aging paper</a><a href="https://doi.org/10.1007/s11357-026-02217-8">GeroScience paper</a></div>
+      </article></div>
     <div class="photos">
       <figure style="margin:0"><img src="images/lab_wobbleboard.jpg" alt="A participant standing on a wobble board wearing motion-capture markers, an EEG cap and a safety harness" loading="lazy"><figcaption>A wobble-board trial: motion-capture markers, EEG and eye tracking recorded together.</figcaption></figure>
       <figure style="margin:0"><img src="images/lab_booth.jpg" alt="Jessica Fabianiak and a colleague at a Biomechanics Research Building outreach table with wobble boards and laptops" loading="lazy"><figcaption>Presenting our wobble-board research at the University of Nebraska Omaha Biomechanics Research Building.</figcaption></figure>
     </div>
   </div>
 </section>
-
-<section id="leadership">
-  <div class="wrap prose">
-    <p class="ket">|collaboration⟩</p>
-    <h2>Leadership</h2>
-    <p class="sub">Science travels further when people from different places and fields carry it together.</p>
-    <p>In 2026 I organized the <b>International Conference on Perception and Action</b> in Omaha as its co-chair, bringing researchers from more than twenty countries into a single conversation. A meeting like that is built from months of quiet decisions, and its success is measured by how little anyone notices them: when the sessions open, the science has the room.</p>
-    <p>That work is what draws me to large international collaborations. I have since moved my studies to France, into a programme run with the country's national nuclear research institutions, and working across languages, disciplines and borders has become, for me, the ordinary shape of science.</p>
-    <figure class="wide"><div class="frame"><img src="images/icpa2026_group.jpg" alt="Group photo of ICPA 2026 participants outside the Scott Aquarium Conference Center in Omaha" loading="lazy"></div><figcaption>ICPA 2026 participants at the Scott Aquarium Conference Center, Omaha.</figcaption></figure>
+<section data-scene="atom" data-scale="10⁻¹⁰ m · an atom" id="quantum">
+  <div class="wrap">
+    <p class="ket">|ψ⟩ = α|left⟩ + β|right⟩</p>
+    <h2>Quantum measurement</h2>
+    <p class="sub">The question I have carried the longest.</p>
+    <div class="cards">
+      <article class="card">
+        <p class="tag">Quantum measurement · First author</p>
+        <h3>Following matter waves without collapsing them</h3>
+        <p>In 2011, Kocsis and Steinberg mapped the average paths of photons through a double slit by nudging each one gently and combining thousands of faint signals. Doing the same for atoms is harder: light bright enough to locate an atom also scrambles the interference you wanted to study. My paper proposes letting falling atoms pass through a curtain of light tuned far from resonance, so each atom leaves only a whisper of a kick on the photons. I worked out the mathematics that turns those whispers into a map of the atoms' momentum, and modelled the whole experiment to show it fits within present cold-atom technology.</p>
+        <div class="figs">
+          <figure><img src="images/curtain_setup.jpg" alt="Schematic of the proposed experiment: rubidium atoms fall through a double slit and cross dual-colour light curtains at 20 heights before reaching a detection screen" loading="lazy"><figcaption>The proposed experiment: cold rubidium atoms fall through a double slit and cross a light curtain at twenty heights before landing on the screen.</figcaption></figure>
+          <figure><img src="images/curtain_regime.jpg" alt="Map of photon number against per-photon coupling showing the viable weak-measurement regime between insufficient statistics and strong measurement, with the chosen operating point" loading="lazy"><figcaption>Where the measurement is gentle enough to keep the interference yet strong enough to read: the green band, with the operating point starred. Regenerated from my published code.</figcaption></figure>
+        </div>
+        <p class="ref">Fabianiak and Deligiannis · revised manuscript under review at <i>New Journal of Physics</i></p>
+        <div class="links"><a href="https://doi.org/10.5281/zenodo.22554166">Read the preprint</a><a href="https://github.com/jessicafabianiak/weak-measurement-matter-waves">Code on GitHub</a></div>
+      </article>
+    </div>
   </div>
 </section>
-
-<section id="publications">
+<section data-scene="nucleus" data-scale="10⁻¹⁵ m · a nucleus" id="contact" class="contact">
+  <div class="wrap prose">
+    <p class="ket">|entangle⟩</p>
+    <h2>Contact</h2>
+    <p class="sub">I am looking for experimental research in nuclear and particle physics for 2027.</p>
+    <p>Email: <a href="mailto:Jessicafabianiak@gmail.com">Jessicafabianiak@gmail.com</a><br>
+    ORCID: <a href="https://orcid.org/0009-0004-3872-0422">0009-0004-3872-0422</a><br>
+    GitHub: <a href="https://github.com/jessicafabianiak">jessicafabianiak</a><br>
+    CV: <a href="Fabianiak_CV.pdf">download PDF</a></p>
+  </div>
+</section>
+<section data-scene="void" data-scale="the record" id="publications">
   <div class="wrap">
     <p class="ket">⟨record⟩</p>
     <h2>Publications</h2>
@@ -363,19 +386,6 @@ figcaption{font-size:13px;color:var(--muted);margin-top:8px}
     </ul>
   </div>
 </section>
-
-<section id="contact" class="contact">
-  <div class="wrap prose">
-    <p class="ket">|entangle⟩</p>
-    <h2>Contact</h2>
-    <p class="sub">I am looking for experimental research in nuclear and particle physics for 2027.</p>
-    <p>Email: <a href="mailto:Jessicafabianiak@gmail.com">Jessicafabianiak@gmail.com</a><br>
-    ORCID: <a href="https://orcid.org/0009-0004-3872-0422">0009-0004-3872-0422</a><br>
-    GitHub: <a href="https://github.com/jessicafabianiak">jessicafabianiak</a><br>
-    CV: <a href="Fabianiak_CV.pdf">download PDF</a></p>
-  </div>
-</section>
-
 </main>
 
 <footer>
@@ -428,31 +438,7 @@ figcaption{font-size:13px;color:var(--muted);margin-top:8px}
 })();
 </script>
 
-<script>
-(function(){
-  var c=document.getElementById('cosmos'),x=c.getContext('2d'),dpr=Math.min(window.devicePixelRatio||1,2),stars=[],tracks=[],W,H;
-  var still=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function size(){W=c.width=innerWidth*dpr;H=c.height=innerHeight*dpr;c.style.width=innerWidth+'px';c.style.height=innerHeight+'px';
-    stars=[];var n=Math.round(innerWidth*innerHeight/3500);
-    for(var i=0;i<n;i++)stars.push({x:Math.random()*W,y:Math.random()*H,r:(Math.random()*1.2+.2)*dpr,p:Math.random()*6.28,s:.4+Math.random()*1.6,h:Math.random()<.12?(Math.random()<.5?'242,196,109':'124,196,255'):'235,235,255'});}
-  function spawn(){ // a curling particle track, like a bubble-chamber trail
-    var ang=Math.random()*6.28; tracks.push({x:Math.random()*W,y:Math.random()*H,a:ang,v:(1.4+Math.random()*1.6)*dpr,k:(Math.random()<.5?-1:1)*(.012+Math.random()*.03),life:0,max:120+Math.random()*120,pts:[],col:Math.random()<.5?'124,196,255':'167,139,250'});}
-  function frame(t){
-    x.clearRect(0,0,W,H);
-    for(var i=0;i<stars.length;i++){var s=stars[i],a=.35+.65*Math.abs(Math.sin(s.p+t*.0006*s.s));
-      x.fillStyle='rgba('+s.h+','+(still?.8:a)+')';x.beginPath();x.arc(s.x,s.y,s.r,0,6.283);x.fill();}
-    if(!still){
-      if(Math.random()<.012&&tracks.length<3)spawn();
-      for(var j=tracks.length-1;j>=0;j--){var k=tracks[j];k.life++;k.a+=k.k;k.k*=1.004;k.v*=.996;k.x+=Math.cos(k.a)*k.v;k.y+=Math.sin(k.a)*k.v;k.pts.push([k.x,k.y]);
-        var fade=1-k.life/k.max; if(fade<=0){tracks.splice(j,1);continue;}
-        x.strokeStyle='rgba('+k.col+','+(.5*fade)+')';x.lineWidth=1*dpr;x.beginPath();
-        for(var m=0;m<k.pts.length;m++){var q=k.pts[m];m?x.lineTo(q[0],q[1]):x.moveTo(q[0],q[1]);}x.stroke();}
-      requestAnimationFrame(frame);}
-  }
-  addEventListener('resize',function(){size();if(still)frame(0);});size();
-  still?frame(0):requestAnimationFrame(frame);
-})();
-</script>
+<script src="js/scenes.js"></script>
 
 <script>
 (function(){
